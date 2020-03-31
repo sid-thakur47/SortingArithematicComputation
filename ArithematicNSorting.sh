@@ -27,12 +27,16 @@ function dictionryToArray() {
 	echo "Converted Array:" ${convertedArray[*]}
 }
 
-function getDescending() {
+function getDescendingAscending() {
 	descending=($(echo ${convertedArray[*]}| tr " " "\n"  | sort -rn))
-	echo "Descending result value:" ${descending[*]}
+	ascending=($(echo ${convertedArray[*]}| tr " " "\n"  | sort -n))
+	echo -e "Descending result value: ${descending[*]}\nAscending result Value:${ascending[*]}"
 }
 
+function run() {
 getComputation
 storeToDictionry
 dictionryToArray
-getDescending
+getDescendingAscending
+}
+run
