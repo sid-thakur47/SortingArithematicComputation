@@ -23,7 +23,7 @@ function storeToDictionry() {
 }
 
 function dictionryToArray() {
-		convertedArray=("${exprDict[*]}")
+	convertedArray=("${exprDict[*]}")
 	echo "Converted Array:" ${convertedArray[*]}
 }
 getComputation
