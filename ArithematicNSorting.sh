@@ -26,7 +26,13 @@ function dictionryToArray() {
 	convertedArray=("${exprDict[*]}")
 	echo "Converted Array:" ${convertedArray[*]}
 }
+
+function getDescending() {
+	descending=($(echo ${convertedArray[*]}| tr " " "\n"  | sort -rn))
+	echo "Descending result value:" ${descending[*]}
+}
+
 getComputation
 storeToDictionry
 dictionryToArray
-
+getDescending
