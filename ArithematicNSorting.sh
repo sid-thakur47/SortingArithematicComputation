@@ -2,9 +2,9 @@ declare -A exprDict
 declare -a convertedInArray
 
 echo "Enter three numbers:"
-read a
-read b
-read c
+	read a
+	read b
+	read c
 
 function getComputation() {
 	resultExpr1=$(($(($a+$b))*$c))
@@ -27,16 +27,21 @@ function dictionryToArray() {
 	echo "Converted Array:" ${convertedArray[*]}
 }
 
-function getDescendingAscending() {
+function getDescending() {
 	descending=($(echo ${convertedArray[*]}| tr " " "\n"  | sort -rn))
+	echo  "Descending result value: ${descending[*]}"
+}
+
+function getAscending() {
 	ascending=($(echo ${convertedArray[*]}| tr " " "\n"  | sort -n))
-	echo -e "Descending result value: ${descending[*]}\nAscending result Value:${ascending[*]}"
+	echo "Ascending result Value:${ascending[*]}"
 }
 
 function run() {
-getComputation
-storeToDictionry
-dictionryToArray
-getDescendingAscending
+	getComputation
+	storeToDictionry
+	dictionryToArray
+	getDescending
+	getAscending
 }
 run
