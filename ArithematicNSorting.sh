@@ -37,11 +37,11 @@ function getAscending() {
 	echo "Ascending result Value:${ascending[*]}"
 }
 
-function run() {
+function main() {
 	getComputation
 	storeToDictionry
 	dictionryToArray
 	getDescending
 	getAscending
 }
-run
+main
